@@ -74,6 +74,17 @@ public class BinarySearchTest {
         SearchResult searchResult2 = BinarySearch.search(key2, seq2);
         checkIfTwoSeqEquals(searchResult1, searchResult2, true);
     }
+    
+    @Test
+    public void checkIfTwoSeqEqualsExpectedFalse() {
+        int key1 = 24;
+        int[] seq1 = {24, 25, 26};
+        int key2 = 25;
+        int[] seq2= {24, 25, 26};
+        SearchResult searchResult1 = BinarySearch.search(key1, seq1);
+        SearchResult searchResult2 = BinarySearch.search(key2, seq2);
+        checkIfTwoSeqEquals(searchResult1, searchResult2, false);
+    }
 
     private void checkIfIsFound(boolean isFound, boolean expectedBoolean) {
         assertThat(isFound, Matchers.equalTo(expectedBoolean));
