@@ -22,3 +22,11 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     checkStyleRunAnalysis: true
     goals: 'package'
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'lab2.1'
+    organization: 'university'
+    scannerMode: 'MSBuild'
+    projectKey: 'lab2.1'
+    projectName: 'lab2.1'
+- task: SonarCloudAnalyze@1
